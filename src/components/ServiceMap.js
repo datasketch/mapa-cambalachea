@@ -1,6 +1,24 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
+import L from 'leaflet';
+import needIconUrl from '../icons/icon-need.png';
+import offerIconUrl from '../icons/icon-offer.png';
 import MapContext from '../context';
+
+const icons = {
+  need: L.icon({
+    iconUrl: needIconUrl,
+    iconSize: [20, 27],
+    iconAnchor: [10, 27],
+    popupAnchor: [0, -20]
+  }),
+  offer: L.icon({
+    iconUrl: offerIconUrl,
+    iconSize: [20, 27],
+    iconAnchor: [10, 27],
+    popupAnchor: [0, -20]
+  })
+};
 
 const ServiceMap = () => {
   const { state } = useContext(MapContext);
@@ -23,6 +41,7 @@ const ServiceMap = () => {
         <Marker
           key={service.id}
           position={[service.latitude, service.longitude]}
+          icon={icons[service.action]}
         >
           <Popup>
             <h3>{service.title}</h3>
