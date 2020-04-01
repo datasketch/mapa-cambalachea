@@ -1,5 +1,4 @@
 import React, { useEffect, useReducer } from 'react';
-import Header from './components/Header';
 import ServiceFilters from './components/ServiceFilters';
 import ServiceMap from './components/ServiceMap';
 import MapContext from './context';
@@ -43,7 +42,6 @@ function App() {
 
   return (
     <>
-      <Header />
       <MapContext.Provider value={{ state, dispatch }}>
         <ServiceFilters />
         <ServiceMap />
