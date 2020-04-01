@@ -8,15 +8,15 @@ import MapContext from '../context';
 const icons = {
   need: L.icon({
     iconUrl: needIconUrl,
-    iconSize: [20, 27],
-    iconAnchor: [10, 27],
-    popupAnchor: [0, -20]
+    iconSize: [30, 40],
+    iconAnchor: [15, 40],
+    popupAnchor: [0, -40]
   }),
   offer: L.icon({
     iconUrl: offerIconUrl,
-    iconSize: [20, 27],
-    iconAnchor: [10, 27],
-    popupAnchor: [0, -20]
+    iconSize: [30, 40],
+    iconAnchor: [15, 40],
+    popupAnchor: [0, -40]
   })
 };
 
@@ -25,6 +25,10 @@ const ServiceMap = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
+    if (!state.selected) {
+      setServices(state.services);
+      return;
+    }
     const services = state.services.filter(
       service => service.category_slug === state.selected
     );

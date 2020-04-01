@@ -29,7 +29,6 @@ function App() {
     }, []);
 
     dispatch({ type: 'SET_CATEGORIES', categories });
-    dispatch({ type: 'SET_SELECTED', selected: categories[0].slug });
   }, [state.services]);
 
   return (
