@@ -1,12 +1,13 @@
 .filters {
   align-items: center;
+  background-color: #3DB6B5;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   padding: 10px 16px;
 }
 
 .filter-label {
-  color: #212529;
   font-weight: 700;
   margin-bottom: 10px;
 }
@@ -14,11 +15,11 @@
 .filter-select {
   width: 200px;
   font-family: 'Open Sans';
-  background-color: #e1262c;
+  background-color: #ffffff;
   border: none;
-  color: white;
-  padding: 5px;
-  border-radius: 5px;
+  color: #666666;
+  padding: 4px 8px;
+  border-radius: 4px;
   font-size: 14px;
   -moz-appearance: none;
   -webkit-appearance: none;

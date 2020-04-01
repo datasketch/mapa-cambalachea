@@ -4,6 +4,7 @@ import L from 'leaflet';
 import needIconUrl from '../icons/icon-need.png';
 import offerIconUrl from '../icons/icon-offer.png';
 import MapContext from '../context';
+import './ServiceMap.css'
 
 const icons = {
   need: L.icon({
