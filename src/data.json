@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1848,
+    "category_slug": "alimentos",
+    "category_name": "Alimentos ",
+    "url": "https://cambalachea.co/service/1848?action=need",
+    "title": "asociasion red de recicladores rehobot",
+    "description": "Se requiere alimentos no perecederos ",
+    "longitude": -74.106400,
+    "latitude": 4.690680,
+    "action": "need",
+    "tags": [
+      "Alimentos",
+      "Comida",
+      "víveres",
+      ""
+    ]
+  },
+  {
+    "id": 1850,
+    "category_slug": "alimentos",
+    "category_name": "Alimentos ",
+    "url": "https://cambalachea.co/service/1850?action=need",
+    "title": "Julian Cespedes Bonilla",
+    "description": "Soy una persona adulta mayor que requiere alimentación ya que vivía del trabajo diario y ahora no tengo como tener ingresos.",
+    "longitude": -74.060312,
+    "latitude": 4.705228,
+    "action": "need",
+    "tags": [
+      "Comida"
+    ]
+  },
+  {
+    "id": 1849,
+    "category_slug": "favores",
+    "category_name": "Favores ",
+    "url": "https://cambalachea.co/service/1849?action=offer",
+    "title": "Paseo perros en Prado veraniego para viejitos",
+    "description": "Si usted es mayor de 70 años y tiene una mascota que no puede sacar al parque, yo lo hago por usted, con todos los cuidados. Siempre y cuando esté en mi radio de acción, puedo sacar su perro dos veces al día.",
+    "longitude": -74.060908,
+    "latitude": 4.7195409999999995,
+    "action": "offer",
+    "tags": [
+      "ancianos",
+      "perros",
+      "mascotas",
+      "paseo"
+    ]
+  }
+]
