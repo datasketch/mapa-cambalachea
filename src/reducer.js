@@ -5,11 +5,16 @@ export default (state, action) => {
         ...state,
         categories: action.categories
       };
-    case 'SET_SELECTED':
+    case 'SELECT_CATEGORY':
       return {
         ...state,
-        selected: action.selected
+        selectedCategory: action.selected
       };
+    case 'SELECT_ACTION':
+      return {
+        ...state,
+        selectedAction: action.selected
+      }
     default:
       return state;
   }

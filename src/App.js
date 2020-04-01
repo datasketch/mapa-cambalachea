@@ -3,16 +3,14 @@ import ServiceFilters from './components/ServiceFilters';
 import ServiceMap from './components/ServiceMap';
 import MapContext from './context';
 import reducer from './reducer';
-
 import data from './data.json';
-// import 'leaflet/dist/leaflet.css';
 import './App.css';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, {
     services: data,
     categories: [],
-    selected: null
+    selectedCategory: ''
   });
 
   useEffect(() => {
@@ -29,6 +27,17 @@ function App() {
     }, []);
 
     dispatch({ type: 'SET_CATEGORIES', categories });
+
+    const search = window.location.search.substring(1)
+    const category = search.match(/category=(\w+)&?/)
+    const action = search.match(/action=(\w+)&?/)
+
+    if (category) {
+      dispatch({ type: 'SELECT_CATEGORY', selected: category[1] })
+    }
+    if (action) {
+      dispatch({ type: 'SET_ACTION'})
+    }
   }, [state.services]);
 
   return (

@@ -1,0 +1,30 @@
+.filters {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 16px;
+}
+
+.filter-label {
+  color: #212529;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.filter-select {
+  width: 200px;
+  font-family: 'Open Sans';
+  background-color: #e1262c;
+  border: none;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.filter-select:focus {
+  outline: none;
+}

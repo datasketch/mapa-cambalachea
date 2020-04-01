@@ -25,21 +25,21 @@ const ServiceMap = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    if (!state.selected) {
+    if (!state.selectedCategory) {
       setServices(state.services);
       return;
     }
     const services = state.services.filter(
-      service => service.category_slug === state.selected
+      service => service.category_slug === state.selectedCategory
     );
     setServices(services);
-  }, [state.selected, state.services]);
+  }, [state.selectedCategory, state.services]);
 
   return (
     <Map center={[4.6097102, -74.081749]} zoom={10}>
       <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png"
+        attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
       />
       {services.map(service => (
         <Marker
