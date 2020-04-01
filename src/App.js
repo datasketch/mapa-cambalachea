@@ -29,15 +29,15 @@ function App() {
 
     dispatch({ type: 'SET_CATEGORIES', categories });
 
-    const search = window.location.search.substring(1)
-    const category = search.match(/category=(\w+)&?/)
-    const action = search.match(/action=(\w+)&?/)
+    const search = window.location.search.substring(1);
+    const category = search.match(/category=(\w+)&?/);
+    const action = search.match(/action=(\w+)&?/);
 
     if (category) {
-      dispatch({ type: 'SELECT_CATEGORY', selected: category[1] })
+      dispatch({ type: 'SELECT_CATEGORY', selected: category[1] });
     }
     if (action) {
-      dispatch({ type: 'SET_ACTION'})
+      dispatch({ type: 'SELECT_ACTION', selected: action[1] });
     }
   }, [state.services]);
 

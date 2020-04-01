@@ -14,7 +14,7 @@ export default (state, action) => {
       return {
         ...state,
         selectedAction: action.selected
-      }
+      };
     default:
       return state;
   }

@@ -4,7 +4,7 @@ import L from 'leaflet';
 import needIconUrl from '../icons/icon-need.png';
 import offerIconUrl from '../icons/icon-offer.png';
 import MapContext from '../context';
-import './ServiceMap.css'
+import './ServiceMap.css';
 
 const icons = {
   need: L.icon({
@@ -26,15 +26,17 @@ const ServiceMap = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    if (!state.selectedCategory) {
-      setServices(state.services);
-      return;
-    }
-    const services = state.services.filter(
-      service => service.category_slug === state.selectedCategory
-    );
+    const services = state.services.filter(service => {
+      const matchCategory = state.selectedCategory
+        ? service.category_slug === state.selectedCategory
+        : true;
+      const matchAction = state.selectedAction
+        ? service.action === state.selectedAction
+        : true;
+      return matchCategory && matchAction;
+    });
     setServices(services);
-  }, [state.selectedCategory, state.services]);
+  }, [state.selectedCategory, state.selectedAction, state.services]);
 
   return (
     <Map center={[4.6097102, -74.081749]} zoom={10}>
