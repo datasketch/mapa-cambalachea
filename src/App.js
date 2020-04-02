@@ -3,12 +3,11 @@ import ServiceFilters from './components/ServiceFilters';
 import ServiceMap from './components/ServiceMap';
 import MapContext from './context';
 import reducer from './reducer';
-import data from './data.json';
 import './App.css';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, {
-    services: data,
+    services: [],
     categories: [],
     selectedCategory: ''
   });
@@ -19,7 +18,6 @@ function App() {
         'https://cambalachea.co/categories/services'
       );
       const data = await response.json();
-      console.log(data);
       dispatch({ type: 'SET_SERVICES', services: data });
     };
     fetchData().catch(console.error);
