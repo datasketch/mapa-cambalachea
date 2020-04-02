@@ -3,6 +3,7 @@ import ServiceFilters from './components/ServiceFilters';
 import ServiceMap from './components/ServiceMap';
 import MapContext from './context';
 import reducer from './reducer';
+import 'leaflet/dist/leaflet.css';
 import './App.css';
 
 function App() {
