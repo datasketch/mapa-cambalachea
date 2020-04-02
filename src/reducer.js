@@ -1,5 +1,10 @@
 export default (state, action) => {
   switch (action.type) {
+    case 'SET_SERVICES':
+      return {
+        ...state,
+        services: action.services
+      };
     case 'SET_CATEGORIES':
       return {
         ...state,

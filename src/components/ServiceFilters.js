@@ -11,7 +11,7 @@ const ServiceFilters = () => {
 
   return (
     <div className="header">
-      <div class="filter">
+      <div className="filter">
         <label className="filter-label" htmlFor="category-filter">
           Filtrar por categoría
         </label>

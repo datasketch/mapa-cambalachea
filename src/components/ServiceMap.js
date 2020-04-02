@@ -21,6 +21,8 @@ const icons = {
   })
 };
 
+const BOG = { latitude: 4.6097102, longitude: -74.081749 };
+
 const ServiceMap = () => {
   const { state } = useContext(MapContext);
   const [services, setServices] = useState([]);
@@ -38,6 +40,12 @@ const ServiceMap = () => {
     setServices(services);
   }, [state.selectedCategory, state.selectedAction, state.services]);
 
+  const getPosition = service => {
+    const latitude = +service.latitude || BOG.latitude;
+    const longitude = +service.longitude || BOG.longitude;
+    return [latitude, longitude];
+  };
+
   return (
     <Map center={[4.6097102, -74.081749]} zoom={10}>
       <TileLayer
@@ -47,7 +55,7 @@ const ServiceMap = () => {
       {services.map(service => (
         <Marker
           key={service.id}
-          position={[service.latitude, service.longitude]}
+          position={getPosition(service)}
           icon={icons[service.action]}
         >
           <Popup>
