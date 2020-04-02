@@ -1,8 +1,9 @@
 import React, { useEffect, useReducer } from 'react';
-import ServiceFilters from './components/ServiceFilters';
+// import ServiceFilters from './components/ServiceFilters';
 import ServiceMap from './components/ServiceMap';
 import MapContext from './context';
 import reducer from './reducer';
+import poweredBy from './icons/poweredby.svg';
 import 'leaflet/dist/leaflet.css';
 import './App.css';
 
@@ -55,8 +56,21 @@ function App() {
   return (
     <>
       <MapContext.Provider value={{ state, dispatch }}>
-        <ServiceFilters />
+        {/* <ServiceFilters /> */}
         <ServiceMap />
+        <div className="brand">
+          <a
+            href="https://www.datasketch.co/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={poweredBy}
+              style={{ display: 'block', marginLeft: 'auto', height: '1.7rem' }}
+              alt="Powered by Datasketch"
+            />
+          </a>
+        </div>
       </MapContext.Provider>
     </>
   );

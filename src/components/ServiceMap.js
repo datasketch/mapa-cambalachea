@@ -50,6 +50,7 @@ const ServiceMap = () => {
     <Map center={[4.6097102, -74.081749]} zoom={11}>
       <TileLayer
         url="http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution=""
       />
       {services.map(service => (
         <Marker
