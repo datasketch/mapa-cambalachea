@@ -20,7 +20,6 @@ function App() {
       );
       const data = await response.json();
       dispatch({ type: 'SET_SERVICES', services: data });
-      console.log(data);
       const categories = state.services.reduce((categories, service) => {
         const exists = categories.some(
           category => category.slug === service.category_slug
@@ -46,7 +45,8 @@ function App() {
       }
     };
     fetchData().catch(console.error);
-  }, [state.services]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
