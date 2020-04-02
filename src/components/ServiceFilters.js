@@ -32,7 +32,17 @@ const ServiceFilters = () => {
       </div>
       <div>
         <h1 className="header-title">Mapa de solidaridad</h1>
-        <img src={poweredBy} style={{ display: 'block', marginLeft: 'auto', height: '1.7rem' }} alt="Powered by Datasketch" />
+        <a
+          href="https://www.datasketch.co/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src={poweredBy}
+            style={{ display: 'block', marginLeft: 'auto', height: '1.7rem' }}
+            alt="Powered by Datasketch"
+          />
+        </a>
       </div>
     </div>
   );
