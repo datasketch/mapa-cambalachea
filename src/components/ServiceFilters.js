@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import MapContext from '../context';
+import poweredBy from '../icons/poweredby.svg';
 import './ServiceFilters.css';
 
 const ServiceFilters = () => {
@@ -29,7 +30,10 @@ const ServiceFilters = () => {
           ))}
         </select>
       </div>
-      <h1 className="header-title">Mapa de solidaridad</h1>
+      <div>
+        <h1 className="header-title">Mapa de solidaridad</h1>
+        <img src={poweredBy} style={{ display: 'block', marginLeft: 'auto', height: '1.7rem' }} alt="Powered by Datasketch" />
+      </div>
     </div>
   );
 };

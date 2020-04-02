@@ -38,9 +38,10 @@
 .header-title {
   color: white;
   font-family: 'PT Sans Narrow';
-  font-size: 1.25rem;
+  font-size: 1.7rem;
   letter-spacing: 0.05em;
   margin: 0;
   text-align: center;
   text-transform: uppercase;
+  margin-bottom: 0.25rem;
 }
