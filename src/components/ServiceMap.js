@@ -53,7 +53,7 @@ const ServiceMap = () => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution=""
       />
-      <MarkerClusterGroup>
+      <MarkerClusterGroup chunkedLoading={true}>
         {services.map((service) => (
           <Marker
             key={service.id}
