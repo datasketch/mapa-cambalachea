@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        'https://cambalachea.co/categories/services'
+        'https://reddecuidadociudadano.gov.co/categories/services'
       );
       const data = await response.json();
       dispatch({ type: 'SET_SERVICES', services: data });
