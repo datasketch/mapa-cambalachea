@@ -45,12 +45,16 @@ function App() {
     const search = window.location.search.substring(1);
     const category = search.match(/category=(\w+)&?/);
     const action = search.match(/action=(\w+)&?/);
+    const zoom = search.match(/zoom=(\d+)&?/);
 
     if (category) {
       dispatch({ type: 'SELECT_CATEGORY', selected: category[1] });
     }
     if (action) {
       dispatch({ type: 'SELECT_ACTION', selected: action[1] });
+    }
+    if (zoom) {
+      dispatch({ type: 'SET_INITIAL_ZOOM', zoom: parseInt(zoom[1], 10) });
     }
   }, []);
 

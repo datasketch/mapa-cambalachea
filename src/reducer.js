@@ -3,23 +3,29 @@ export default (state, action) => {
     case 'SET_SERVICES':
       return {
         ...state,
-        services: action.services
+        services: action.services,
       };
     case 'SET_CATEGORIES':
       return {
         ...state,
-        categories: action.categories
+        categories: action.categories,
       };
     case 'SELECT_CATEGORY':
       return {
         ...state,
-        selectedCategory: action.selected
+        selectedCategory: action.selected,
       };
     case 'SELECT_ACTION':
       return {
         ...state,
-        selectedAction: action.selected
+        selectedAction: action.selected,
       };
+    case 'SET_INITIAL_ZOOM': {
+      return {
+        ...state,
+        zoom: action.zoom,
+      };
+    }
     default:
       return state;
   }
