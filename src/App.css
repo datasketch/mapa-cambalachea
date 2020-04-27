@@ -2,6 +2,7 @@ html,
 body {
   font-family: 'Open Sans', serif;
   margin: 0;
+  height: 100%;
 }
 
 .brand {
