@@ -32,6 +32,18 @@ export default (state, action) => {
         center: action.center,
       };
     }
+    case 'SET_SCROLLWHEEL': {
+      return {
+        ...state,
+        scrollwheel: action.scrollwheel,
+      };
+    }
+    case 'SET_DRAGGING': {
+      return {
+        ...state,
+        dragging: action.dragging
+      }
+    }
     default:
       return state;
   }

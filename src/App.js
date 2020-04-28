@@ -15,7 +15,9 @@ function App() {
     selectedCategory: '',
     selectedAction: '',
     zoom: null,
-    center: null
+    center: null,
+    scrollwheel: true,
+    dragging: true,
   });
 
   useEffect(() => {
@@ -49,7 +51,9 @@ function App() {
     const category = search.match(/category=(\w+)&?/);
     const action = search.match(/action=(\w+)&?/);
     const zoom = search.match(/zoom=(\d+)&?/);
-    const center = search.match(/center=(.*)&?/);
+    const center = search.match(/center=(-?\d+\.?\d+?,-?\d+\.?\d+?)&?/);
+    const scrollwheel = search.match(/scrollwheel=(\w+)&?/);
+    const dragging = search.match(/dragging=(\w+)&?/);
 
     if (category) {
       dispatch({ type: 'SELECT_CATEGORY', selected: category[1] });
@@ -61,16 +65,21 @@ function App() {
       dispatch({ type: 'SET_INITIAL_ZOOM', zoom: parseInt(zoom[1], 10) });
     }
     if (center) {
-      const coordinates = center[1].split(',')
-      if (coordinates.length !== 2) {
-        return
-      }
-      const isValid = coordinates.every(n => !isNaN(n))
-      if (!isValid) {
-        return
-      }
-      const latlng = coordinates.map(parseFloat)
-      dispatch({ type: 'SET_INITIAL_CENTER', center: latlng })
+      console.log(center)
+      const coordinates = center[1].split(',').map(parseFloat);
+      dispatch({ type: 'SET_INITIAL_CENTER', center: coordinates });
+    }
+    if (scrollwheel) {
+      dispatch({
+        type: 'SET_SCROLLWHEEL',
+        scrollwheel: scrollwheel[1] === true,
+      });
+    }
+    if (dragging) {
+      dispatch({
+        type: 'SET_DRAGGING',
+        dragging: dragging[1] === true,
+      });
     }
   }, []);
 

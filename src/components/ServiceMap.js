@@ -51,6 +51,8 @@ const ServiceMap = () => {
     <Map
       center={state.center || [4.6097102, -74.081749]}
       zoom={state.zoom || 13}
+      scrollWheelZoom={state.scrollwheel}
+      dragging={state.dragging}
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
