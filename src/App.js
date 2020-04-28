@@ -13,6 +13,9 @@ function App() {
     services: [],
     categories: [],
     selectedCategory: '',
+    selectedAction: '',
+    zoom: null,
+    center: null
   });
 
   useEffect(() => {
@@ -46,6 +49,7 @@ function App() {
     const category = search.match(/category=(\w+)&?/);
     const action = search.match(/action=(\w+)&?/);
     const zoom = search.match(/zoom=(\d+)&?/);
+    const center = search.match(/center=(.*)&?/);
 
     if (category) {
       dispatch({ type: 'SELECT_CATEGORY', selected: category[1] });
@@ -55,6 +59,18 @@ function App() {
     }
     if (zoom) {
       dispatch({ type: 'SET_INITIAL_ZOOM', zoom: parseInt(zoom[1], 10) });
+    }
+    if (center) {
+      const coordinates = center[1].split(',')
+      if (coordinates.length !== 2) {
+        return
+      }
+      const isValid = coordinates.every(n => !isNaN(n))
+      if (!isValid) {
+        return
+      }
+      const latlng = coordinates.map(parseFloat)
+      dispatch({ type: 'SET_INITIAL_CENTER', center: latlng })
     }
   }, []);
 

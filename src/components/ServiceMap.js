@@ -48,7 +48,10 @@ const ServiceMap = () => {
   };
 
   return (
-    <Map center={[4.6097102, -74.081749]} zoom={state.zoom || 13}>
+    <Map
+      center={state.center || [4.6097102, -74.081749]}
+      zoom={state.zoom || 13}
+    >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution=""

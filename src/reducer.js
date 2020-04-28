@@ -26,6 +26,12 @@ export default (state, action) => {
         zoom: action.zoom,
       };
     }
+    case 'SET_INITIAL_CENTER': {
+      return {
+        ...state,
+        center: action.center,
+      };
+    }
     default:
       return state;
   }
